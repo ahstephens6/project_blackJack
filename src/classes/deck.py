@@ -3,7 +3,7 @@ from utils.constants import SUITS
 
 class Deck:
     """Class that handles the cards."""
-    def __init__(self, num_decks: int = 0) -> None:
+    def __init__(self, num_decks: int = 1) -> None:
         """Constructor that tells how many decks will be in the shoe."""
         self.deck = Deck.build_deck(num_decks)
         
