@@ -1,6 +1,6 @@
 class Player:
     """Player class for keeping track of player money and such."""
-    def __init__(self, name: str, money: int) -> None:
+    def __init__(self, name: str, money: int = 1000):
         """Constructor
         
         Parameters
