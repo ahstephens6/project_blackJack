@@ -20,3 +20,5 @@ PLAYER_CHOICES = {
     3: 'Double Down',
     4: 'Split'
 }
+BUST = 21
+DEALER_LIMIT = 16
