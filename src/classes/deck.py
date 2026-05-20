@@ -1,4 +1,7 @@
+import random
+
 from classes.card import Card
+from classes.player import Player
 from utils.constants import SUITS
 
 class Deck:
@@ -6,6 +9,15 @@ class Deck:
     def __init__(self, num_decks: int = 1):
         """Constructor that tells how many decks will be in the shoe."""
         self.card_deck = Deck.build_deck(num_decks)
+        
+
+    def deal_card(self, player: Player) -> None:
+        """Take the first card off the top of the deck and append it to the player hand.
+        
+        Parameter
+        ---------
+        player: Player"""
+        player.hand.append(self.card_deck.pop(0))
         
 
     @staticmethod
@@ -24,3 +36,17 @@ class Deck:
                     deck.append(Card(rank, suit))
         return deck
         
+    
+    @staticmethod
+    def shuffle(deck: list[Card]) -> list[Card]:
+        """Shuffles the cards in a deck.
+        
+        Parameters
+        ----------
+        deck: list[Card]
+        
+        Returns
+        -------
+        list[Card]"""
+        random.shuffle(deck)
+        return deck
